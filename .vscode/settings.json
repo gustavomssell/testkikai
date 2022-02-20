@@ -1,0 +1,14 @@
+{
+    "files.exclude": {
+      "node_modules": true,
+      ".vscode": false,
+      ".gitignore": true,
+      "package.json": false,
+      "package-lock.json": true,
+      "yarn.lock": true,
+      "yarn-error.log": true,
+      "vite.config.js":true,
+    },
+    "git.ignoreLimitWarning": true
+  }
+  
