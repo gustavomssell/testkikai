@@ -26,9 +26,13 @@ export const SupporterStorage = ({children }) => {
  }
 
  return(
- <SupporterContext.Provider value={{supporter, CreateSupporter, DeleteSupporter, UpdateSupporter}} >
+ <SupporterContext.Provider 
+  value={{supporter,
+          CreateSupporter, 
+          DeleteSupporter, 
+          UpdateSupporter}}>
+            
   {children}
  </SupporterContext.Provider>
  )
-
 }

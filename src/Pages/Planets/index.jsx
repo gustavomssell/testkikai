@@ -19,7 +19,7 @@ export const Planets = () => {
   const [page, setPage] = React.useState(1);
   const [max, setMax] = React.useState(null)  
 
-  const getData =()=>{
+  const getData =()=>{// API SWAPI ESTA COM PROBLEMA DE CERTIFICADO
     // request(GET_STARSHIPS(1)).then(r=> setData(r.data.results))
     setData(mock.results)
   }
