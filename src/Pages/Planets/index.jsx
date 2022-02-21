@@ -1,39 +1,44 @@
 import React from 'react'
-import { useContext } from 'react';
 import Card from '../../Components/Card';
 import useAxios from '../../Components/utils/useAxios'
-import { SupporterContext } from '../../Context/SupporterContext';
-import { GET_STARSHIPS } from '../../services/options'
-import { Col, Row, Container } from '../../styles/grid';
-import { Title, Wrapper } from './styles';
+import { Circles } from  'react-loader-spinner'
+import { GET_PLANETS } from '../../services/options'
+import { StyledButton, Title, Wrapper } from './styles';
 import {ShowPlanets} from "./ShowPlanets"
-import mock from "./mock"
+import { ThemeContext } from 'styled-components';
 
 const LIMIT = 10;
 
 export const Planets = () => {
-  const {request, buffer} = useAxios()
-  const {CreateSupporter} = useContext(SupporterContext)
-  const [open, setOpen] = React.useState({active: false, url: null})
+  const { colors } = React.useContext(ThemeContext);
+  const { request, loading } = useAxios()
   const [data, setData] = React.useState(null)
-  const [page, setPage] = React.useState(1);
-  const [max, setMax] = React.useState(null)  
-
-  const getData =()=>{// API SWAPI ESTA COM PROBLEMA DE CERTIFICADO
-    // request(GET_STARSHIPS(1)).then(r=> setData(r.data.results))
-    setData(mock.results)
+  const [page, setPage] = React.useState(1)
+  const [open, setOpen] = React.useState({active: false, url: null})
+  
+  const getData = async(currentPage)=>{ 
+    await request(GET_PLANETS(currentPage)).then(r=>setData(r.data)) 
   }
 
   React.useEffect(()=>{
-   getData()
-  },[])
+   getData(page)
+  },[page])
 
   return (
   <div>
   <ShowPlanets open={open.active} setOpen={setOpen} url={open.url}/>
   <Title>Planets</Title>
+   <div style={{textAlign: "center"}}>
+     <StyledButton onClick={()=>setPage(prev=> prev - 1)} disabled={!data?.previous || loading}> {'<' }</StyledButton> 
+     <StyledButton onClick={()=>setPage(prev=> prev + 1)} disabled={!data?.next || loading}> {'>' } </StyledButton>
+   </div>
+
+   <div style={{justifyContent: "center", display: "flex", visibility:!loading ?'hidden':'visible', paddingTop: "0.5rem"}}>
+    <Circles color={colors.primary} height={25} width={25}/> 
+   </div>
+
    <Wrapper>
-     {data !== null && data.map((value)=>{
+     {data && data.results.map((value)=>{
       return <Card 
               Image={() => <img alt="bees" src="/img/planets.png" />}
               key={value.name}

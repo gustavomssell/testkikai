@@ -58,9 +58,8 @@ export const StyledButton = styled.button`
   color: ${props => props.theme.colors.secondary};
   font-size: 1rem;
   font-weight: 600;
-  height: 48px;
+  height: 24px;
   padding: 0 30px;
-  box-shadow: 0 0px 5px 1px #ccc;
   cursor: pointer;
 `;
 
@@ -68,7 +67,7 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   display: flex;
   
-  margin: 5%;
+  margin: 0.1rem 1rem;
   justify-content: flex-start;
   flex-wrap: wrap;
 

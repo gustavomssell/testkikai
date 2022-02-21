@@ -7,11 +7,8 @@ import { Box, ListBox, ListItem, Text } from './styles'
 export const ShowPlanets = ({open, setOpen, url}) => {
   const [planet, setPlanet] = React.useState(null);
   const [loading, setLoading] = React.useState(true)
- 
-  const onClose =()=>{
-    setOpen({active: false, url:null})
-  }
-
+  const onClose =()=> setOpen({active: false, url:null})
+  
   const getData= async()=>{
    const {data} = await api(GET_JSON(url));
    setPlanet({...data, residents: [], films: []})

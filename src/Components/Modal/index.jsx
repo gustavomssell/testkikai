@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
-
 import { Container, Content, WrapperButtonClose, Close, Title } from "./styles";
 
 export function Modal({ children, openModal, onClose, title }) {
@@ -27,9 +25,7 @@ export function Modal({ children, openModal, onClose, title }) {
       <div style={{maxHeight: "400px", overflowY: "auto"}}>
        {children} 
       </div>
-     
       </Content>
-     
       </Container>
     </CSSTransition>
   );
@@ -39,9 +35,4 @@ Modal.defaultProps = {
   title: ""
 }
 
-export default function Modalportal({ children, ...props }) {
-  return ReactDOM.createPortal(
-    <Modal {...props}>{children}</Modal>,
-    document.getElementById("modal-root")
-  );
-}
+ 

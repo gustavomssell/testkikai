@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const Button = styled.button`
+  background: ${props => props.theme.colors.primary};
+  border-radius: 10px;
+  border: 1;
+  color: ${props => props.theme.colors.secondary};
+  font-size: 1rem;
+  font-weight: 600;
+  height: 24px;
+  padding: 0 30px;
+  cursor: pointer;
+`
+
 export const Box = styled.div`
  display: grid;
  padding: 1rem;
