@@ -24,9 +24,11 @@ export function Modal({ children, openModal, onClose, title }) {
       <Title>{title}</Title>
       <Close onClick={handleCloseModal}>X</Close>
       </WrapperButtonClose>
-      {children} 
-        
-        </Content>
+      <div style={{maxHeight: "400px", overflowY: "auto"}}>
+       {children} 
+      </div>
+     
+      </Content>
      
       </Container>
     </CSSTransition>

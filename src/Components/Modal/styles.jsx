@@ -29,6 +29,8 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
 
+
+
   &.${transitionName}-enter {
     opacity: 0;
     transform: scale(0.9);
@@ -48,6 +50,7 @@ export const Container = styled.section`
   }
 `;
 export const Content = styled.div`
+
   background: ${props => props.theme.colors.background};
   padding: 1.5rem;
   width: 500px;

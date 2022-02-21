@@ -14,7 +14,7 @@ const LIMIT = 10;
 export const Planets = () => {
   const {request, buffer} = useAxios()
   const {CreateSupporter} = useContext(SupporterContext)
-  const [open, setOpen] = React.useState({active: false, data: null})
+  const [open, setOpen] = React.useState({active: false, url: null})
   const [data, setData] = React.useState(null)
   const [page, setPage] = React.useState(1);
   const [max, setMax] = React.useState(null)  
@@ -30,7 +30,7 @@ export const Planets = () => {
 
   return (
   <div>
-  <ShowPlanets open={open.active} setOpen={setOpen} data={open.data}/>
+  <ShowPlanets open={open.active} setOpen={setOpen} url={open.url}/>
   <Title>Planets</Title>
    <Wrapper>
      {data !== null && data.map((value)=>{
@@ -38,7 +38,7 @@ export const Planets = () => {
               Image={() => <img alt="bees" src="/img/planets.png" />}
               key={value.name}
               title={value.name} 
-              onClick={()=> setOpen({active: true, data:value})}
+              onClick={()=> setOpen({active: true, url:value.url})}
               />
      })}
   </Wrapper>
