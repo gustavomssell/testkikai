@@ -62,3 +62,16 @@ export const StyledButton = styled.button`
   box-shadow: 0 0px 5px 1px #ccc;
   cursor: pointer;
 `;
+
+export const Wrapper = styled.div`
+  align-items: flex-start;
+  display: flex;
+  
+  margin: 5%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  > article {
+    flex: 0.5 0 15%;
+  }
+`;

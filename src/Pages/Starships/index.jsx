@@ -6,19 +6,22 @@ import { SupporterContext } from '../../Context/SupporterContext';
 import { GET_STARSHIPS } from '../../services/options'
 import { Col, Row, Container } from '../../styles/grid';
 import { Title, Wrapper } from './styles';
+import {ShowStarships} from "./ShowStartships"
+import mock from "./mock"
 
 const LIMIT = 10;
 
 export const Starships = () => {
   const {request, buffer} = useAxios()
   const {CreateSupporter} = useContext(SupporterContext)
-  const [select, setSelect] = React.useState(null)
+  const [open, setOpen] = React.useState({active: false, data: null})
   const [data, setData] = React.useState(null)
   const [page, setPage] = React.useState(1);
   const [max, setMax] = React.useState(null)  
 
   const getData =()=>{
-     request(GET_STARSHIPS(1)).then(r=> setData(r.data.results))
+     //request(GET_STARSHIPS(1)).then(r=> setData(r.data.results))
+     setData(mock.results)
   }
 
 
@@ -28,26 +31,11 @@ export const Starships = () => {
   ,[])
   return (
   <div>
-    <div>
-      <Title>Starships</Title>
-    </div>
+   <ShowStarships open={open.active} setOpen={setOpen} data={open.data}/>
+   <Title>Starships</Title>
+  
  
    <Wrapper>
-   <Card  />
-   <Card  />
-   <Card  />
-
-   <Card  />
-   <Card  />
-   <Card  />
-
-   <Card  />
-   <Card  />
-   <Card  />
-
-   <Card  />
-
- 
      {data !== null && data.map((value)=>{
       return <Card 
               Image={() => <img alt="bees" src="/img/starships.png" />}
@@ -55,7 +43,7 @@ export const Starships = () => {
               title={value.name} 
               model={value.model}
               manufacturer={value.manufacturer}
-              onClick={()=> CreateSupporter(value)}
+              onClick={()=> setOpen({active: true, data:value})}
               />
      })}
 
