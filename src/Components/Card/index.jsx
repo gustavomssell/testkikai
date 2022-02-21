@@ -5,7 +5,7 @@ import { StyledCard } from "./styles";
 const Card = ({ title, Image, excerpt, model, manufacturer, ...props }) => (
   <StyledCard {...props}>
     <Image />
-    <header>
+    <header style={{textAlign: "center"}}>
       <h1>{title}</h1>
     </header>
     <section>
@@ -26,7 +26,7 @@ const Card = ({ title, Image, excerpt, model, manufacturer, ...props }) => (
 );
 
 Card.defaultProps = {
-  title: "Example Card",
+  title: "Example Card Example Card Example Card",
   Image: () => (
     <img alt="planets" src="/img/planets.png" />
   ),

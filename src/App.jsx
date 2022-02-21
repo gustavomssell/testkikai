@@ -18,10 +18,10 @@ function App() {
   
  return (
  <ThemeProvider theme={theme}>
- <GlobalStyle/>
-  <Header toggleTheme={toggleTheme} />  
+  <GlobalStyle/>
    <SupporterStorage>
     <BrowserRouter>
+     <Header toggleTheme={toggleTheme} />  
      <Routes>
       <Route exact path="/"          element={<Home/>} />
       <Route exact path="/planets"   element={<Planets/>} />

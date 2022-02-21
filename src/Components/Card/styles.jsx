@@ -3,7 +3,7 @@ import { materialShadow } from "../../styles/shadows";
 
 export const StyledCard = styled.article`
   background: ${props => props.theme.colors.secondary};
-  margin: 1em;
+  margin: 1rem;
   padding: 1rem;
   display: flex;
   cursor: pointer;
@@ -18,8 +18,8 @@ export const StyledCard = styled.article`
   }
   img {
     width: 100%;
-    height: 50%;
-    border-radius: 0.2em;
+    height: 40%;
+    border-radius: 0.5rem;
   }
 
   > section:after {

@@ -1,14 +1,28 @@
-import React, { useContext } from 'react';
+import React  from 'react';
+import { useNavigate } from "react-router-dom";
 import Switch from 'react-switch';
-import { ThemeContext } from 'styled-components';
+import { ThemeContext  } from 'styled-components';
+import styled from 'styled-components';
 import { Container } from './styles';
 
+const Title = styled.p`
+ cursor: pointer;
+ padding: 0.1rem 1.0rem;
+ border-radius: 15px;
+ border: 2;
+ font-size: 2rem;
+ font-family: 'Star Jedi';
+ color: ${props => props.theme.colors.secondary};
+ box-shadow: 2px 1px 6px 4px #FFF;
+`
+
 const Header  = ({ toggleTheme }) => {
-  const { colors, title } = useContext(ThemeContext);
+  const navigate = useNavigate();
+  const { colors, title } = React.useContext(ThemeContext);
 
   return (
     <Container>
-     <p>Star Wars</p> 
+     <Title onClick={()=>navigate('/')} >Star Wars</Title> 
       <Switch
         onChange={toggleTheme}
         checked={title === 'dark'}

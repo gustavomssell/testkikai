@@ -4,7 +4,8 @@ import Card from '../../Components/Card';
 import useAxios from '../../Components/utils/useAxios'
 import { SupporterContext } from '../../Context/SupporterContext';
 import { GET_STARSHIPS } from '../../services/options'
-import { Wrapper } from './styles';
+import { Col, Row, Container } from '../../styles/grid';
+import { Title, Wrapper } from './styles';
 
 const LIMIT = 10;
 
@@ -26,7 +27,27 @@ export const Starships = () => {
   }
   ,[])
   return (
+  <div>
+    <div>
+      <Title>Starships</Title>
+    </div>
+ 
    <Wrapper>
+   <Card  />
+   <Card  />
+   <Card  />
+
+   <Card  />
+   <Card  />
+   <Card  />
+
+   <Card  />
+   <Card  />
+   <Card  />
+
+   <Card  />
+
+ 
      {data !== null && data.map((value)=>{
       return <Card 
               Image={() => <img alt="bees" src="/img/starships.png" />}
@@ -39,5 +60,6 @@ export const Starships = () => {
      })}
 
   </Wrapper>
+  </div> 
   )
 }

@@ -1,45 +1,18 @@
 import React from 'react'
-import { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
-import styled from 'styled-components';
+
+import { Col, Container } from '../../styles/grid';
+import { SupporterBox, SupporterItem, Box, Title, StyledButton } from './styles';
  
 import Card from '../../Components/Card';
- 
 import { SupporterContext } from '../../Context/SupporterContext';
-import { Col, Container, Row } from '../../styles/grid';
 import { ModalCreateSupporter } from './CreateSupporter';
 import { ModalEditSupporter } from './EditSupporter';
-import { SupporterBox, SupporterItem } from './styles';
 
-const Title = styled.p`
- text-align: center;
- font-size: 2rem;
- font-family: 'Star Jedi';
- color: ${props => props.theme.colors.secondary};
-`;
-
-const Box = styled(Row)`
- justify-Content: center;
-`;
-
-const StyledButton = styled.button`
-  background: ${props => props.theme.colors.primary};
-  border-radius: 10px;
-  border: 1;
-  color: ${props => props.theme.colors.secondary};
-  font-size: 1rem;
-  font-weight: 600;
-  height: 48px;
-  padding: 0 30px;
-  box-shadow: 0 0px 5px 1px #ccc;
-  cursor: pointer;
-`;
-
- 
 export const Home = () => {
  const [open, setOpen] = React.useState(false);
  const [openEdit, setOpenEdit] = React.useState({active: false, id: null});
- const {supporter} = useContext(SupporterContext)
+ const {supporter} = React.useContext(SupporterContext)
  const navigate = useNavigate();
  return ( 
  <> 
@@ -56,9 +29,8 @@ export const Home = () => {
      </Col>
     </Box>
     <Box>
-    <Col style={{display: 'grid', gap: "1rem"}}>
+    <Col style={{display: 'grid', gap: "0.1rem"}}>
       <StyledButton onClick={()=> setOpen(true)}> Be a collaborator </StyledButton>
-      
       <SupporterBox>
       {supporter.map((value, index)=>{
       return <SupporterItem index={index} onClick={()=> setOpenEdit({active: true, id: index})}>
