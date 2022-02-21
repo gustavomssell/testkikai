@@ -4,10 +4,8 @@ import useAxios from '../../Components/utils/useAxios'
 import { Circles } from  'react-loader-spinner'
 import { GET_PLANETS } from '../../services/options'
 import { StyledButton, Title, Wrapper } from './styles';
-import {ShowPlanets} from "./ShowPlanets"
+import { ShowPlanets } from "./ShowPlanets"
 import { ThemeContext } from 'styled-components';
-
-const LIMIT = 10;
 
 export const Planets = () => {
   const { colors } = React.useContext(ThemeContext);

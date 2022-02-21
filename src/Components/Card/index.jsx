@@ -1,8 +1,7 @@
 import React from "react";
 import { StyledCard } from "./styles";
- 
 
-const Card = ({ title, Image, excerpt,   ...props }) => (
+const Card = ({ title, Image, excerpt, ...props }) => (
   <StyledCard {...props}>
     <Image />
     <header style={{textAlign: "center"}}>
@@ -11,13 +10,11 @@ const Card = ({ title, Image, excerpt,   ...props }) => (
     <section>
       <p>{excerpt}</p>
     </section>
- 
-   
   </StyledCard>
 );
 
 Card.defaultProps = {
-  title: "Example Card Example Card Example Card",
+  title: "",
   Image: () => (
     <img alt="planets" src="/img/planets.png" />
   ),

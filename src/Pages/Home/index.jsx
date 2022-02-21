@@ -10,10 +10,11 @@ import { ModalCreateSupporter } from './CreateSupporter';
 import { ModalEditSupporter } from './EditSupporter';
 
 export const Home = () => {
+ const navigate = useNavigate();
+ const {supporter} = React.useContext(SupporterContext)
  const [open, setOpen] = React.useState(false);
  const [openEdit, setOpenEdit] = React.useState({active: false, id: null});
- const {supporter} = React.useContext(SupporterContext)
- const navigate = useNavigate();
+
  return ( 
  <> 
   <ModalCreateSupporter open={open} setOpen={setOpen}/>

@@ -7,8 +7,6 @@ import { Title, Wrapper, StyledButton } from './styles';
 import {ShowStarships} from "./ShowStartships"
 import { ThemeContext } from 'styled-components';
 
-const LIMIT = 10;
-
 export const Starships = () => {
   const { colors } = React.useContext(ThemeContext);
   const { request, loading } = useAxios()

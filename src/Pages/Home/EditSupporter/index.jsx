@@ -5,17 +5,16 @@ import { Modal } from '../../../Components/Modal'
 import { SupporterContext } from '../../../Context/SupporterContext';
 import { useContext } from 'react';
 import { Button, DeleteButton, FormBox, InputMaskText, InputText } from './styles';
-import {Delete} from '@styled-icons/fluentui-system-filled'
-
+import { Delete } from '@styled-icons/fluentui-system-filled'
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
-    .required("Obrigatório")
-    .min(4, "O nome deve ter pelo menos 4 caracteres"),
-  email: Yup.string().email("E-mail inválido").required("Obrigatório"),
+    .required("Required")
+    .min(4, "The name must be at least 4 characters long"),
+  email: Yup.string().email("Invalid email").required("Required"),
   phone: Yup.string()
-  .required("Obrigatório")
-  .min(8, "O nome deve ter pelo menos 8 caracteres"),
+  .required("Required")
+  .min(8, "The phone must be at least 8 characters long"),
 });
 
 export const ModalEditSupporter = ({open, setOpen, id}) => {
@@ -55,15 +54,10 @@ export const ModalEditSupporter = ({open, setOpen, id}) => {
 
 const Forms = (props) => {
   const {
-    values: {
-      name,
-      email,
-      phone,
-    },
+    values: {name, email, phone },
     isSubmitting,
     setFieldValue,
-    handleSubmit,
-  } = props;
+    handleSubmit } = props;
   return (
  <FormBox onSubmit={handleSubmit} noValidate  >
   <InputText placeholder="Name" id="name" name="name" type="text" value={name}></InputText>

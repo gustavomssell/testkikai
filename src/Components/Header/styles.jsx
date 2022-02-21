@@ -15,3 +15,14 @@ export const Container = styled.div`
     color: ${props => props.theme.colors.secondary};
   }
 `;
+
+export const Title = styled.p`
+ cursor: pointer;
+ padding: 0.1rem 1.0rem;
+ border-radius: 15px;
+ border: 2;
+ font-size: 2rem;
+ font-family: 'Star Jedi';
+ color: ${props => props.theme.colors.secondary};
+ box-shadow: 2px 1px 6px 4px #FFF;
+`

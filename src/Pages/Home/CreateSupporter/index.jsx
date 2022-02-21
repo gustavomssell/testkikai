@@ -14,12 +14,12 @@ const initialValues = {
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
-    .required("Obrigatório")
-    .min(4, "O nome deve ter pelo menos 4 caracteres"),
-  email: Yup.string().email("E-mail inválido").required("Obrigatório"),
+    .required("Required")
+    .min(4, "The name must be at least 4 characters long"),
+  email: Yup.string().email("Invalid email").required("Required"),
   phone: Yup.string()
-  .required("Obrigatório")
-  .min(8, "O nome deve ter pelo menos 8 caracteres"),
+  .required("Required")
+  .min(8, "The phone must be at least 8 characters long"),
 });
 
 export const ModalCreateSupporter = ({open, setOpen}) => {

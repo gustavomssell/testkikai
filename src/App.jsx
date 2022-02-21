@@ -1,16 +1,18 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from './styles/global';
+import light from "./styles/themes/light";
+import dark from "./styles/themes/dark";
 
+import usePersistedState from "./Components/utils/usePersistedState";
+import { SupporterStorage } from "./Context/SupporterContext";
+ 
+import Header from "./Components/Header";
 import { Planets } from "./Pages/Planets";
 import { Starships } from "./Pages/Starships";
 import { Home } from "./Pages/Home";
-import { SupporterStorage } from "./Context/SupporterContext";
-import light from "./styles/themes/light";
-import dark from "./styles/themes/dark";
-import usePersistedState from "./Components/utils/usePersistedState";
-import Header from "./Components/Header";
 
 function App() {
   const [theme, setTheme] = usePersistedState('theme', light);

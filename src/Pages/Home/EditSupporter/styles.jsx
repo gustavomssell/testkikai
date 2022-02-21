@@ -11,7 +11,6 @@ export const DeleteButton = styled.button`
   cursor: pointer;
 `;
 
-
 export const InputText = styled(Field)`
   cursor: pointer;
   width: 250px;
