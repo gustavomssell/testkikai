@@ -44,6 +44,7 @@ export const SupporterItem = styled.li`
   }
 `
 export const Title = styled.p`
+ margin-top: 1rem;
  text-align: center;
  font-size: 2rem;
  font-family: 'Star Jedi';

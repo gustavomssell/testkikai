@@ -24,27 +24,23 @@ export const Planets = () => {
     setData(mock.results)
   }
 
-
   React.useEffect(()=>{
    getData()
   },[])
+
   return (
   <div>
   <ShowPlanets open={open.active} setOpen={setOpen} data={open.data}/>
   <Title>Planets</Title>
-    
    <Wrapper>
      {data !== null && data.map((value)=>{
       return <Card 
               Image={() => <img alt="bees" src="/img/planets.png" />}
               key={value.name}
               title={value.name} 
-              model={value.model}
-              manufacturer={value.manufacturer}
               onClick={()=> setOpen({active: true, data:value})}
               />
      })}
-
   </Wrapper>
   </div> 
   )

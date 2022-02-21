@@ -13,8 +13,9 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
   }
+
+
 
   a,
   a:link,
@@ -22,7 +23,7 @@ export default createGlobalStyle`
   a:focus {
     color: currentColor;
     text-decoration: none;
-   // cursor: pointer;
+     cursor: pointer;
   }
   
   body {

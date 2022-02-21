@@ -29,8 +29,10 @@ export const Home = () => {
      </Col>
     </Box>
     <Box>
-    <Col style={{display: 'grid', gap: "0.1rem"}}>
+    <Col style={{display: 'grid', gap: "0.1rem" }}>
+      <div style={{textAlign: "center"}}>
       <StyledButton onClick={()=> setOpen(true)}> Be a collaborator </StyledButton>
+      </div>
       <SupporterBox>
       {supporter.map((value, index)=>{
       return <SupporterItem index={index} onClick={()=> setOpenEdit({active: true, id: index})}>
