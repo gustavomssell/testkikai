@@ -15,8 +15,6 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-
-
   a,
   a:link,
   a:hover,
@@ -31,7 +29,5 @@ export default createGlobalStyle`
     font-size: 14px;
     color: ${props => props.theme.colors.text};
     font-family: sans-serif;
-    
-  //  font-family: 'Star Jedi';
   }
 `;
